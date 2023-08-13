@@ -1,0 +1,19 @@
+h1 {
+  	text-align: center;
+	padding: 1em;
+}
+
+h3 {
+	font-variant: small-caps;
+	padding-bottom: 0.8em;
+	padding-top: 0.8em;
+}
+
+.personnages {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+iframe {
+	width:100%;
+}
