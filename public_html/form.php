@@ -42,7 +42,7 @@
 	# Connexion
 	$server = 'localhost' ;
 	$user = 'id21047764_admin' ;
-	$password = 'excellentpassword';
+	$password = 'Perceval2!';
 	$base = 'id21047764_chap5' ;
 
 	$conn = new mysqli($server, $user, $password, $base) ;
@@ -57,9 +57,11 @@
 		$email = nettoyer($_POST['email']) ;
 		$sujet = nettoyer($_POST['sujet']) ;
 		$msg = nettoyer($_POST['message']) ;
+		if(!empty($_POST['date'])) $date = nettoyer($_POST['date']) ;
+		else $date = date('Y-m-d') ;    # date du jour par défaut
 	
 	    # Envoi de la requête
-    	$sql = "INSERT INTO `commentaires` (`prenom`, `nom`, `sujet`, `date`, `email`, `message`) VALUES ('$prenom', '$nom', '$sujet', CURRENT_TIMESTAMP, '$email', '$msg');" ;
+    	$sql = "INSERT INTO `commentaires` (`prenom`, `nom`, `sujet`, `date`, `email`, `message`) VALUES ('$prenom', '$nom', '$sujet', '$date', '$email', '$msg');" ;
   		if ($conn->query($sql)) {
   		  # Lecture et restitution depuis la base
     		$id = $conn->insert_id ;
